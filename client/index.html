@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WeatherNow App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 🌄 Video Background -->
+  <video autoplay muted loop id="weatherVideo" class="video-bg">
+    <source src="videos/default.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🌐 Navbar -->
+  <div class="navbar">
+    <div class="nav-right">
+      <span id="welcomeUser" class="hidden"></span>
+      <button id="loginBtn" onclick="showLogin()">Login</button>
+      <button id="registerBtn" onclick="showRegister()">Register</button>
+      <button id="logoutBtn" class="hidden" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- 🌤 Main Weather Container -->
+  <div class="container">
+    <h1>WeatherNow</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name..." />
+    <button onclick="getWeather()">Check Weather</button>
+
+    <div id="weatherCard" class="hidden">
+      <div id="weatherImage"></div>
+      <h2 id="cityName"></h2>
+      <p id="temperature"></p>
+      
+      <!-- 🖼️ Description with icon -->
+      <p id="description">
+<img id="weatherIcon" src="" alt="icon" width="70" style="vertical-align: middle; margin-right: 10px;" />
+
+        <span id="descText"></span>
+      </p>
+
+      <p id="suggestion"></p>
+    </div>
+  </div>
+
+  <!-- 🔐 Auth Box -->
+  <div class="auth-box hidden" id="authBox">
+    <h2 id="authTitle">Register</h2>
+    <input type="text" id="authUsername" placeholder="Username" />
+    <input type="email" id="authEmail" placeholder="Email" />
+    <input type="password" id="authPassword" placeholder="Password" />
+    <button onclick="handleAuth()">Submit</button>
+    <p onclick="toggleAuthMode()" style="cursor:pointer; color:#007acc;">Switch to Login</p>
+  </div>
+
+  <!-- ⏱️ Forecast Sections -->
+  <div id="forecastWrapper" class="forecast-wrapper hidden">
+    <div class="hourly-section">
+      <h3 class="section-title">Hourly Forecast</h3>
+      <div class="hourly-container" id="hourlyContainer"></div>
+    </div>
+
+    <div class="weekly-section" id="weeklyForecast">
+      <h3 class="section-title">Weekly Forecast</h3>
+      <div class="weekly-container" id="weeklyContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
