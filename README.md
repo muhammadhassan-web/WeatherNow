@@ -20,9 +20,9 @@ Full-stack weather application with real-time forecasts and user authentication.
 
 ```
 WeatherNow/
-├── client/       # HTML/CSS/JS frontend
-├── server/       # Express route/model source
-└── package.json  # Server dependencies
+|-- client/       (HTML/CSS/JS frontend)
+|-- server/       (Express route/model source)
+|-- package.json  (Server dependencies)
 ```
 
 ## Local development
@@ -30,6 +30,6 @@ WeatherNow/
 ```bash
 npm install
 node index.js
-
-# Then open client/index.html in your browser
 ```
+
+Then open client/index.html in your browser.
